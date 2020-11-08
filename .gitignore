@@ -1,0 +1,15 @@
+.idea
+.vs
+
+*.DotSettings
+*.DS_Store
+*.user
+*.userprefs
+
+obj
+Debug
+Release
+
+Delivery
+packages
+toolchains
