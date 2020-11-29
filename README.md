@@ -20,15 +20,15 @@ For more information regarding our training or tool offering, go to https://www.
 
 ## Fault models
 
-FiSim has a collection of fault models to describe the class(es) of faults it should exhaustively simulate. The fault models are implemented in the FiSim library, which adds fault simulation capabilities to the underlying PlatformSim library. Currently, it only supports fault models that can be modelled by changing the executed instructions or by settings 1 or more breakpoints on specific instructions to change the state of the simulation. 
+FiSim has a collection of fault models to describe the class(es) of faults it should exhaustively simulate. The fault models are implemented in the FiSim library, which adds fault simulation capabilities to the underlying PlatformSim library. Currently, it only supports fault models that can be modelled by changing the executed instructions or by setting 1 or more breakpoints on specific instructions to change the state of the simulation. 
 
 A fault might occur once when an instruction is executed, a so-called transient fault, or a fault might be persistent for the duration of a simulation, a so-called cached fault. This simulates that the fault was introduced while fetching the instruction and is cached in the icache of the CPU. 
 
 ## Limitations
 
-FiSim simply iterates over all possible faults given 1 or more fault models and re-executes the target code with every possible fault. Likely, on a real device not all simulated faults are equally realistic or probable, and some faults might not even able to occur at all. Incorporating this information in the simulation is outside the scope of this tool and requires detailed understanding of the target.
+FiSim simply iterates over all possible faults (given 1 or more fault models) and re-executes the target code with every possible fault. Likely, on a real device not all simulated faults are equally realistic or probable, and some faults might not even able to occur at all. Incorporating this information in the simulation is outside the scope of this tool and requires detailed understanding of the target.
 
-This approach makes the simulation (relatively) slow and increasingly complex fault models (e.g. multiple bit flips or data faults) quickly become too slow to simulate in a reasonable amount of time, especially in a training context where quick feedback is prefered over maximum accuracy or identified faults.
+This approach makes the simulation (relatively) slow and increasingly complex fault models (e.g. multiple bit flips or data faults) quickly become too slow to simulate in a reasonable amount of time, especially in a training context where quick feedback is prefered over having the maximum level of accuracy or the highest possible amount of identified faults.
 
 ## Cross-platform support
 
